@@ -9,9 +9,20 @@
   <ItemGroup>
     <PackageReference Include="microsoft.azure.webjobs" Version="2.2.0" />
     <PackageReference Include="microsoft.azure.webjobs.extensions" Version="2.2.0" />
-    <PackageReference Include="microsoft.web.webjobs.publish" Version="2.0.0" />
   </ItemGroup>
 
-  <Import Project="$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets" Condition="Exists('$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets')" />
+  <!--
+
+	We exclude Microsoft.Web.WebJobs.Publish when we're building with dotnet CLI, to avoid this error:
+
+	~\.nuget\packages\microsoft.web.webjobs.publish\2.0.0\build\webjobs.console.targets(24,3): error MSB4019: The imported project "C:\Program Files\dotnet\sdk\2.1.300\Microsoft\VisualStudio\v15.0\WebApplications\Microsoft.WebApplication.targets" was not found. Confirm that the path in the <Import> declaration is correct, and that the file exists on disk.
+
+	todo: is there a better way to check than $(MSBuildToolsPath.Contains('dotnet')) ?
+
+  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebJobs.Publish" Version="2.0.0" Condition="!$(MSBuildToolsPath.Contains('dotnet'))" />
+  </ItemGroup>
+  <Import Project="$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets" Condition="Exists('$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets') AND !$(MSBuildToolsPath.Contains('dotnet'))" />
 
 </Project>
