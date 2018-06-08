@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJob-Traditional", "WebJob-Traditional\WebJob-Traditional.csproj", "{9C126A11-F2C0-436C-8C08-14B0F67D3B4D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebJob-dotnet-cs", "WebJob-dotnet-cs\WebJob-dotnet-cs.csproj", "{D8CB2BD3-70C8-4530-BDC6-BFE84356FD20}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WebJob-dotnet-fs", "WebJob-dotnet-fs\WebJob-dotnet-fs.fsproj", "{09B6479A-2CC8-47F0-903D-5AAF98E4E308}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9C126A11-F2C0-436C-8C08-14B0F67D3B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C126A11-F2C0-436C-8C08-14B0F67D3B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C126A11-F2C0-436C-8C08-14B0F67D3B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CB2BD3-70C8-4530-BDC6-BFE84356FD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CB2BD3-70C8-4530-BDC6-BFE84356FD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CB2BD3-70C8-4530-BDC6-BFE84356FD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CB2BD3-70C8-4530-BDC6-BFE84356FD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B6479A-2CC8-47F0-903D-5AAF98E4E308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B6479A-2CC8-47F0-903D-5AAF98E4E308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B6479A-2CC8-47F0-903D-5AAF98E4E308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B6479A-2CC8-47F0-903D-5AAF98E4E308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

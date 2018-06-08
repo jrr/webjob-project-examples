@@ -1,12 +1,25 @@
-﻿using System;
+﻿using Microsoft.Azure.WebJobs;
 
 namespace WebJob_dotnet_cs
 {
+    // To learn more about Microsoft Azure WebJobs SDK, please see https://go.microsoft.com/fwlink/?LinkID=320976
     class Program
     {
-        static void Main(string[] args)
+        // Please set the following connection strings in app.config for this WebJob to run:
+        // AzureWebJobsDashboard and AzureWebJobsStorage
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var config = new JobHostConfiguration();
+            config.UseTimers();
+
+            if (config.IsDevelopment)
+            {
+                config.UseDevelopmentSettings();
+            }
+
+            var host = new JobHost(config);
+            // The following code ensures that the WebJob will be running continuously
+            host.RunAndBlock();
         }
     }
 }

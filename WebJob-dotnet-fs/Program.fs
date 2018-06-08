@@ -1,8 +1,20 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿open System
+open Microsoft.Azure.WebJobs
+open Microsoft.Azure.WebJobs.Host
+open Microsoft.Azure.WebJobs.Extensions.Timers
 
-open System
+
+let HelloTimer ( [<TimerTrigger("0 */1 * * * *")>] timerInfo : TimerInfo) (log : TraceWriter) =
+    log.Info("Hello from F# webjob!");
+
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+    let config = new JobHostConfiguration()
+    config.UseTimers()
+
+    let host = new JobHost(config)
+    host.RunAndBlock()
+
+    0
+

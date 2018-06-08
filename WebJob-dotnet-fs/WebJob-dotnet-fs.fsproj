@@ -7,7 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Properties\webjob-publish-settings.json" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.5.0" />
+    <PackageReference Update="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.azure.webjobs" Version="2.2.0" />
+    <PackageReference Include="microsoft.azure.webjobs.extensions" Version="2.2.0" />
+    <PackageReference Include="microsoft.web.webjobs.publish" Version="2.0.0" />
+  </ItemGroup>
+
+  <Import Project="$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets" Condition="Exists('$(NuGetPackageRoot)Microsoft.Web.WebJobs.Publish\2.0.0\tools\webjobs.targets')" />
+
 
 </Project>

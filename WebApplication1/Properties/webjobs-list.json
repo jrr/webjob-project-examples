@@ -1,8 +1,8 @@
 ﻿{
   "$schema": "http://schemastore.org/schemas/json/webjobs-list.json",
   "WebJobs": [
-    {
-      "filePath": "../WebJob-Traditional/WebJob-Traditional.csproj"
-    }
+    { "filePath": "../WebJob-Traditional/WebJob-Traditional.csproj" },
+    { "filePath": "../WebJob-dotnet-cs/WebJob-dotnet-cs.csproj" },
+    { "filePath": "../WebJob-dotnet-fs/WebJob-dotnet-fs.fsproj" }
   ]
 }
